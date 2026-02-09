@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px
+}
+
+#taskInput {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;              
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;;
+}
+
+#taskInput:focus {
+    border-color: #667eea
+}
+
+/* ESTILO DO BOTÃO */
+#addBtn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    fonte-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15ps rbga(102, 126, 234, 0.4);
+}
+
+
+#addBtn:active {
+    transform: translateY(0);
+}
+
+/* LISTA DE TAREFA */
+#taskList {
+    list-style: none;
+}
+
+/* CADA ITEM DA LISTA */
+.task-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: pae-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+
+.task-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+/* TEXTO DA TAREFA */
+.task-text {
+    flex: 1;
+    color: #333;
+    font-size: 1rem;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+    opacity: 0.6;
+}
+
+/*botão deletar*/
+.delete-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #ff3838;
+}
+
+/* mensagem quando não há tarefas */
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 40px 20px;
+}
