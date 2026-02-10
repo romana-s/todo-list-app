@@ -7,7 +7,7 @@
 
 ## 🚀 Demonstração
 
-[Clique aqui para ver o projeto ao vivo](#) *(em breve)*
+[Clique aqui para ver o projeto ao vivo](https://romana-s.github.io/todo-list-app/)
 
 ## 📸 Preview
 
