@@ -72,7 +72,7 @@ cd todo-list-app
 
 3. Abra o arquivo `index.html` no seu navegador.
 
-Ou simplesmente acesse a [versão online](#).
+Ou simplesmente acesse a [versão online](https://romana-s.github.io/todo-list-app/).
 
 ## 📚 O que Aprendi
 
