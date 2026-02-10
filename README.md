@@ -11,7 +11,7 @@
 
 ## 📸 Preview
 
-![Screenshot do projeto](./assets/images/screenshot.png)
+![Screenshot do projeto](./assets/images/Captura%20de%20tela%202026-02-10%20154756.png)
 ## 💡 Sobre o Projeto
 
 Este projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento web front-end. O objetivo era criar uma aplicação funcional que permite aos usuários:
