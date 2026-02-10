@@ -11,8 +11,7 @@
 
 ## 📸 Preview
 
-![Screenshot do projeto](https://via.placeholder.com/800x400/667eea/ffffff?text=Todo+List+App)
-
+![Screenshot do projeto](./assets/images/screenshot.png)
 ## 💡 Sobre o Projeto
 
 Este projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento web front-end. O objetivo era criar uma aplicação funcional que permite aos usuários:
