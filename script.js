@@ -1,30 +1,31 @@
-// selecionando elementos no dom
+// Selecionando elementos no DOM
 const taskInput = document.getElementById('taskInput');
 const addBtn = document.getElementById('addBtn');
 const taskList = document.getElementById('taskList');
 
-// array para armazenar as tarefas
+// Array para armazenar as tarefas
 let tasks = [];
 
-//função para carregar tarefas do LocalStorage
+// Função para carregar tarefas do LocalStorage
 function loadTasks() {
     const savedTasks = localStorage.getItem('tasks');
-    if (savedTasks){
+    if (savedTasks) {
         tasks = JSON.parse(savedTasks);
         renderTasks();
     }
 }
 
-//função para salvar tarefas no LocalStorage
+// Função para salvar tarefas no LocalStorage
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+// Função para adicionar nova tarefa
 function addTask() {
     const taskText = taskInput.value.trim();
 
     if (taskText === '') {
-        alert('Pro favor, digite uma tarefa!');
+        alert('Por favor, digite uma tarefa!');
         return; 
     }
 
@@ -41,15 +42,16 @@ function addTask() {
     taskInput.focus();
 }
 
+// Função para deletar tarefa
 function deleteTask(id) {
-    tasks= tasks.filter(task => task.id !== id);
+    tasks = tasks.filter(task => task.id !== id);
     saveTasks();
     renderTasks();
 }
 
-//função para marcar tarefa concluida
+// Função para marcar tarefa como concluída
 function toggleTask(id) {
-    const task = tasks.filter(task => task.id === id);
+    const task = tasks.find(task => task.id === id);  // ← CORREÇÃO AQUI!
     if (task) {
         task.completed = !task.completed;
         saveTasks();
@@ -57,18 +59,18 @@ function toggleTask(id) {
     }
 }
 
-//função para mostrar na tela
+// Função para mostrar na tela
 function renderTasks() {
     taskList.innerHTML = '';
 
-    if (tasks.length ===0){
+    if (tasks.length === 0) {
         taskList.innerHTML = '<li class="empty-state">Nenhuma tarefa adicionada ainda. Comece agora! 🚀</li>';
         return;
     }
 
     tasks.forEach(task => {
         const li = document.createElement('li');
-        li.className =`task-item ${task.completed ? 'completed' : ''}`;
+        li.className = `task-item ${task.completed ? 'completed' : ''}`;
 
         li.innerHTML = `
             <span class="task-text">${task.text}</span>
@@ -79,17 +81,18 @@ function renderTasks() {
             toggleTask(task.id);
         });
 
-    taskList.appendChild(li);
-});
+        taskList.appendChild(li);
+    });
 }
 
-//escutadores de evenos
+// Escutadores de eventos
 addBtn.addEventListener('click', addTask);
 
-taskInput.addEventListener('keypress' , (e) => {
+taskInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         addTask();
     }
 });
 
+// Carregar tarefas ao iniciar a página
 loadTasks();
